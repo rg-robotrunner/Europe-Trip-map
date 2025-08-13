@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_cbd1e319c1025e4352f587f07841303d {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>
+    
+    
+<div style="
+    position: fixed; bottom: 30px; left: 30px; z-index:9999; 
+    background: white; padding: 10px 14px; 
+    border: 1px solid #444; border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    font-size: 12px;">
+<b>Legend</b><br>
+<span style="display:inline-block;width:22px;height:3px;background:red;margin-right:6px;border-top:3px dashed red;"></span> Flight<br>
+<span style="display:inline-block;width:22px;height:3px;background:blue;margin-right:6px;"></span> Train<br>
+<span style="display:inline-block;width:12px;height:12px;background:green;display:inline-block;margin-right:6px;border:1px solid #333;"></span> City with hotel info
+</div>
+    
+            <div class="folium-map" id="map_cbd1e319c1025e4352f587f07841303d" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_cbd1e319c1025e4352f587f07841303d = L.map(
+                "map_cbd1e319c1025e4352f587f07841303d",
+                {
+                    center: [50.5, 10.0],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 5,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_cbd1e319c1025e4352f587f07841303d);
+
+            
+
+        
+    
+            var tile_layer_e477c46cc3843fc8ce9baae6bf62d2fb = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_cbd1e319c1025e4352f587f07841303d);
+        
+    
+            var marker_1207836692005bef91764d8224de28da = L.marker(
+                [51.5074, -0.1276],
+                {}
+            ).addTo(map_cbd1e319c1025e4352f587f07841303d);
+        
+    
+            var icon_fc923edfdd72893c9337604196ca4f5a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_1207836692005bef91764d8224de28da.setIcon(icon_fc923edfdd72893c9337604196ca4f5a);
+        
+    
+        var popup_16e35979ec2a132f2b3a526d174ba4ee = L.popup({"maxWidth": 320});
+
+        
+            var html_b48213976b7dc808a642d465babaa50b = $(`<div id="html_b48213976b7dc808a642d465babaa50b" style="width: 100.0%; height: 100.0%;"><b>1 London 8/20</b></div>`)[0];
+            popup_16e35979ec2a132f2b3a526d174ba4ee.setContent(html_b48213976b7dc808a642d465babaa50b);
+        
+
+        marker_1207836692005bef91764d8224de28da.bindPopup(popup_16e35979ec2a132f2b3a526d174ba4ee)
+        ;
+
+        
+    
+    
+            marker_1207836692005bef91764d8224de28da.bindTooltip(
+                `<div>
+                     London
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_4c7c7a12b7a110b63ff1c1bdc1664119 = L.marker(
+                [51.5074, -0.1276],
+                {}
+            ).addTo(map_cbd1e319c1025e4352f587f07841303d);
+        
+    
+            var div_icon_c94952db13c61021eaffa4953df1e9b4 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"transform: translate(10px, -10px);background: rgba(255,255,255,0.95); padding: 2px 6px;border: 1px solid #333; border-radius: 4px;font-size: 11pt; font-weight: 600;\"\u003e1 London 8/20\u003c/div\u003e", "iconAnchor": [0, 0], "iconSize": [220, 26]});
+            marker_4c7c7a12b7a110b63ff1c1bdc1664119.setIcon(div_icon_c94952db13c61021eaffa4953df1e9b4);
+        
+    
+            var marker_36669b44707d0c9d5c8f7293ba41b021 = L.marker(
+                [48.2082, 16.3738],
+                {}
+            ).addTo(map_cbd1e319c1025e4352f587f07841303d);
+        
+    
+            var icon_00a4d01665f707c6da96e2ab69d859e3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_36669b44707d0c9d5c8f7293ba41b021.setIcon(icon_00a4d01665f707c6da96e2ab69d859e3);
+        
+    
+        var popup_4110722bbdd6d2d5b94586e0e510c37e = L.popup({"maxWidth": 320});
+
+        
+            var html_345191fa8e2656d2bcc36b94955eefb6 = $(`<div id="html_345191fa8e2656d2bcc36b94955eefb6" style="width: 100.0%; height: 100.0%;"><b>2 Vienna 8/20–8/24</b><hr style='margin:6px 0'/><b>Hotel:</b> Courtyard Vienna Prater/Messe<br><b>Address:</b> Trabrennstrasse 4, 1020 Vienna, Austria<br><a href='https://www.google.com/maps/search/?api=1&query=Trabrennstrasse+4%2C+1020+Vienna%2C+Austria' target='_blank'>Open in Google Maps</a></div>`)[0];
+            popup_4110722bbdd6d2d5b94586e0e510c37e.setContent(html_345191fa8e2656d2bcc36b94955eefb6);
+        
+
+        marker_36669b44707d0c9d5c8f7293ba41b021.bindPopup(popup_4110722bbdd6d2d5b94586e0e510c37e)
+        ;
+
+        
+    
+    
+            marker_36669b44707d0c9d5c8f7293ba41b021.bindTooltip(
+                `<div>
+                     Vienna • Courtyard Vienna Prater/Messe
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a45432211cec3bcdabc6ab5d2169bd82 = L.marker(
+                [48.2082, 16.3738],
+                {}
+            ).addTo(map_cbd1e319c1025e4352f587f07841303d);
+        
+    
+            var div_icon_cd0b28f410d3d46264068d48f889949c = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"transform: translate(10px, -10px);background: rgba(255,255,255,0.95); padding: 2px 6px;border: 1px solid #333; border-radius: 4px;font-size: 11pt; font-weight: 600;\"\u003e2 Vienna 8/20\u20138/24\u003c/div\u003e", "iconAnchor": [0, 0], "iconSize": [220, 26]});
+            marker_a45432211cec3bcdabc6ab5d2169bd82.setIcon(div_icon_cd0b28f410d3d46264068d48f889949c);
+        
+    
+            var marker_f76703be442fa8fcf7269abd13f79d58 = L.marker(
+                [47.8095, 13.0458],
+                {}
+            ).addTo(map_cbd1e319c1025e4352f587f07841303d);
+        
+    
+            var icon_e8a40bf5c012f60245f19cc608a0b116 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_f76703be442fa8fcf7269abd13f79d58.setIcon(icon_e8a40bf5c012f60245f19cc608a0b116);
+        
+    
+        var popup_f3aef217c48173629f4b64ffc5a9a6ae = L.popup({"maxWidth": 320});
+
+        
+            var html_3f2802be16d3e39dcb414529bbf99fee = $(`<div id="html_3f2802be16d3e39dcb414529bbf99fee" style="width: 100.0%; height: 100.0%;"><b>3 Salzburg 8/24–8/27</b><hr style='margin:6px 0'/><b>Hotel:</b> HOTEL andrä<br><b>Address:</b> Hubert Sattler Gasse 3, 5020 Salzburg, Austria<br><a href='https://www.google.com/maps/search/?api=1&query=Hubert+Sattler+Gasse+3%2C+5020+Salzburg%2C+Austria' target='_blank'>Open in Google Maps</a></div>`)[0];
+            popup_f3aef217c48173629f4b64ffc5a9a6ae.setContent(html_3f2802be16d3e39dcb414529bbf99fee);
+        
+
+        marker_f76703be442fa8fcf7269abd13f79d58.bindPopup(popup_f3aef217c48173629f4b64ffc5a9a6ae)
+        ;
+
+        
+    
+    
+            marker_f76703be442fa8fcf7269abd13f79d58.bindTooltip(
+                `<div>
+                     Salzburg • HOTEL andrä
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_10cbc41e7168dd3381e396f267c8f221 = L.marker(
+                [47.8095, 13.0458],
+                {}
+            ).addTo(map_cbd1e319c1025e4352f587f07841303d);
+        
+    
+            var div_icon_f1d951d4d43b61a1ecd0bda44d8001ca = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"transform: translate(10px, -10px);background: rgba(255,255,255,0.95); padding: 2px 6px;border: 1px solid #333; border-radius: 4px;font-size: 11pt; font-weight: 600;\"\u003e3 Salzburg 8/24\u20138/27\u003c/div\u003e", "iconAnchor": [0, 0], "iconSize": [220, 26]});
+            marker_10cbc41e7168dd3381e396f267c8f221.setIcon(div_icon_f1d951d4d43b61a1ecd0bda44d8001ca);
+        
+    
+            var marker_3dee15e5f0d463ff20849cb07a0f12c3 = L.marker(
+                [47.2692, 11.4041],
+                {}
+            ).addTo(map_cbd1e319c1025e4352f587f07841303d);
+        
+    
+            var icon_d064642af2de23e2471d512705eecdb6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_3dee15e5f0d463ff20849cb07a0f12c3.setIcon(icon_d064642af2de23e2471d512705eecdb6);
+        
+    
+        var popup_95c93e45fa18bd01f9731112d5ba6cc7 = L.popup({"maxWidth": 320});
+
+        
+            var html_207aa79a89835de51d5d8eff93c664b6 = $(`<div id="html_207aa79a89835de51d5d8eff93c664b6" style="width: 100.0%; height: 100.0%;"><b>4 Innsbruck 8/25</b></div>`)[0];
+            popup_95c93e45fa18bd01f9731112d5ba6cc7.setContent(html_207aa79a89835de51d5d8eff93c664b6);
+        
+
+        marker_3dee15e5f0d463ff20849cb07a0f12c3.bindPopup(popup_95c93e45fa18bd01f9731112d5ba6cc7)
+        ;
+
+        
+    
+    
+            marker_3dee15e5f0d463ff20849cb07a0f12c3.bindTooltip(
+                `<div>
+                     Innsbruck
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1f07b14ab269b1e9055d9c2d56222246 = L.marker(
+                [47.2692, 11.4041],
+                {}
+            ).addTo(map_cbd1e319c1025e4352f587f07841303d);
+        
+    
+            var div_icon_34c1fd755b06cde5021d13475ff27f48 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"transform: translate(10px, -10px);background: rgba(255,255,255,0.95); padding: 2px 6px;border: 1px solid #333; border-radius: 4px;font-size: 11pt; font-weight: 600;\"\u003e4 Innsbruck 8/25\u003c/div\u003e", "iconAnchor": [0, 0], "iconSize": [220, 26]});
+            marker_1f07b14ab269b1e9055d9c2d56222246.setIcon(div_icon_34c1fd755b06cde5021d13475ff27f48);
+        
+    
+            var marker_26f5a6b28625bab1e6542a5ae15abdbf = L.marker(
+                [47.4979, 19.0402],
+                {}
+            ).addTo(map_cbd1e319c1025e4352f587f07841303d);
+        
+    
+            var icon_d6c1355337baf22417c0f1fe2ef4648e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_26f5a6b28625bab1e6542a5ae15abdbf.setIcon(icon_d6c1355337baf22417c0f1fe2ef4648e);
+        
+    
+        var popup_bd7849f7f1f64d7a94da0b02c64aaa6a = L.popup({"maxWidth": 320});
+
+        
+            var html_b6674bc55bc3e50b5ecb79886fcacf53 = $(`<div id="html_b6674bc55bc3e50b5ecb79886fcacf53" style="width: 100.0%; height: 100.0%;"><b>5 Budapest 8/27–8/30</b><hr style='margin:6px 0'/><b>Hotel:</b> Three Corners Avenue Hotel<br><b>Address:</b> Paulay Ede street 50., 1061 Budapest, Hungary<br><a href='https://www.google.com/maps/search/?api=1&query=Paulay+Ede+street+50.%2C+1061+Budapest%2C+Hungary' target='_blank'>Open in Google Maps</a></div>`)[0];
+            popup_bd7849f7f1f64d7a94da0b02c64aaa6a.setContent(html_b6674bc55bc3e50b5ecb79886fcacf53);
+        
+
+        marker_26f5a6b28625bab1e6542a5ae15abdbf.bindPopup(popup_bd7849f7f1f64d7a94da0b02c64aaa6a)
+        ;
+
+        
+    
+    
+            marker_26f5a6b28625bab1e6542a5ae15abdbf.bindTooltip(
+                `<div>
+                     Budapest • Three Corners Avenue Hotel
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e2b229f8c1719b5415b284fee0194f03 = L.marker(
+                [47.4979, 19.0402],
+                {}
+            ).addTo(map_cbd1e319c1025e4352f587f07841303d);
+        
+    
+            var div_icon_a843bb447967848f0d2e3f747ccf4a90 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"transform: translate(10px, -10px);background: rgba(255,255,255,0.95); padding: 2px 6px;border: 1px solid #333; border-radius: 4px;font-size: 11pt; font-weight: 600;\"\u003e5 Budapest 8/27\u20138/30\u003c/div\u003e", "iconAnchor": [0, 0], "iconSize": [220, 26]});
+            marker_e2b229f8c1719b5415b284fee0194f03.setIcon(div_icon_a843bb447967848f0d2e3f747ccf4a90);
+        
+    
+            var marker_ef72ce0bd112374809b66fa4b7335e9f = L.marker(
+                [52.3676, 4.9041],
+                {}
+            ).addTo(map_cbd1e319c1025e4352f587f07841303d);
+        
+    
+            var icon_4e17821ee8197d0586fb09d16e7ce189 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_ef72ce0bd112374809b66fa4b7335e9f.setIcon(icon_4e17821ee8197d0586fb09d16e7ce189);
+        
+    
+        var popup_937fb363e5df662b7fdd31606de7f6fc = L.popup({"maxWidth": 320});
+
+        
+            var html_3feb11e12acaa4cef05ebf6fa54589a6 = $(`<div id="html_3feb11e12acaa4cef05ebf6fa54589a6" style="width: 100.0%; height: 100.0%;"><b>6 Amsterdam 8/30–9/2</b><hr style='margin:6px 0'/><b>Hotel:</b> DoubleTree by Hilton Amsterdam - NDSM Wharf<br><b>Address:</b> NDSM-Plein 28, 1033 WB Amsterdam, Netherlands<br><a href='https://www.google.com/maps/search/?api=1&query=NDSM-Plein+28%2C+1033+WB+Amsterdam%2C+Netherlands' target='_blank'>Open in Google Maps</a></div>`)[0];
+            popup_937fb363e5df662b7fdd31606de7f6fc.setContent(html_3feb11e12acaa4cef05ebf6fa54589a6);
+        
+
+        marker_ef72ce0bd112374809b66fa4b7335e9f.bindPopup(popup_937fb363e5df662b7fdd31606de7f6fc)
+        ;
+
+        
+    
+    
+            marker_ef72ce0bd112374809b66fa4b7335e9f.bindTooltip(
+                `<div>
+                     Amsterdam • DoubleTree by Hilton Amsterdam - NDSM Wharf
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a9949648fed35f78b5ac5bb14d6950cd = L.marker(
+                [52.3676, 4.9041],
+                {}
+            ).addTo(map_cbd1e319c1025e4352f587f07841303d);
+        
+    
+            var div_icon_a8931b0270f6a43e1a0bfcb134772b88 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"transform: translate(10px, -10px);background: rgba(255,255,255,0.95); padding: 2px 6px;border: 1px solid #333; border-radius: 4px;font-size: 11pt; font-weight: 600;\"\u003e6 Amsterdam 8/30\u20139/2\u003c/div\u003e", "iconAnchor": [0, 0], "iconSize": [220, 26]});
+            marker_a9949648fed35f78b5ac5bb14d6950cd.setIcon(div_icon_a8931b0270f6a43e1a0bfcb134772b88);
+        
+    
+            var marker_7f5bef41652f86603f1474450c3e194c = L.marker(
+                [52.0705, 4.3007],
+                {}
+            ).addTo(map_cbd1e319c1025e4352f587f07841303d);
+        
+    
+            var icon_7a2d9fa6c7d327d975a8af9e9911a339 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_7f5bef41652f86603f1474450c3e194c.setIcon(icon_7a2d9fa6c7d327d975a8af9e9911a339);
+        
+    
+        var popup_7dc32abc33a12cc09f76bea8e2a92954 = L.popup({"maxWidth": 320});
+
+        
+            var html_91d0bcb5eff76fb48e4d0fa46a47507e = $(`<div id="html_91d0bcb5eff76fb48e4d0fa46a47507e" style="width: 100.0%; height: 100.0%;"><b>7 The Hague 9/2</b></div>`)[0];
+            popup_7dc32abc33a12cc09f76bea8e2a92954.setContent(html_91d0bcb5eff76fb48e4d0fa46a47507e);
+        
+
+        marker_7f5bef41652f86603f1474450c3e194c.bindPopup(popup_7dc32abc33a12cc09f76bea8e2a92954)
+        ;
+
+        
+    
+    
+            marker_7f5bef41652f86603f1474450c3e194c.bindTooltip(
+                `<div>
+                     The Hague
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_fafe05041c03b6c0a2b1eb1b1204aa6b = L.marker(
+                [52.0705, 4.3007],
+                {}
+            ).addTo(map_cbd1e319c1025e4352f587f07841303d);
+        
+    
+            var div_icon_583f351d4314a93a1486777126d7158b = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"transform: translate(10px, -10px);background: rgba(255,255,255,0.95); padding: 2px 6px;border: 1px solid #333; border-radius: 4px;font-size: 11pt; font-weight: 600;\"\u003e7 The Hague 9/2\u003c/div\u003e", "iconAnchor": [0, 0], "iconSize": [220, 26]});
+            marker_fafe05041c03b6c0a2b1eb1b1204aa6b.setIcon(div_icon_583f351d4314a93a1486777126d7158b);
+        
+    
+            var marker_e2e347ef093c9d1ae45f9ba9e060cbfa = L.marker(
+                [51.2194, 4.4025],
+                {}
+            ).addTo(map_cbd1e319c1025e4352f587f07841303d);
+        
+    
+            var icon_be83a8861014f90db229fe78960a2937 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_e2e347ef093c9d1ae45f9ba9e060cbfa.setIcon(icon_be83a8861014f90db229fe78960a2937);
+        
+    
+        var popup_d465970798d45160a4a4562171fa764f = L.popup({"maxWidth": 320});
+
+        
+            var html_38823a8298c8bdea077680f364049bae = $(`<div id="html_38823a8298c8bdea077680f364049bae" style="width: 100.0%; height: 100.0%;"><b>8 Antwerp 9/2–9/3</b><hr style='margin:6px 0'/><b>Hotel:</b> Hampton by Hilton Antwerp Central Station<br><b>Address:</b> Pelikaanstraat 10-16, 2018 Antwerp, Belgium<br><a href='https://www.google.com/maps/search/?api=1&query=Pelikaanstraat+10-16%2C+2018+Antwerp%2C+Belgium' target='_blank'>Open in Google Maps</a></div>`)[0];
+            popup_d465970798d45160a4a4562171fa764f.setContent(html_38823a8298c8bdea077680f364049bae);
+        
+
+        marker_e2e347ef093c9d1ae45f9ba9e060cbfa.bindPopup(popup_d465970798d45160a4a4562171fa764f)
+        ;
+
+        
+    
+    
+            marker_e2e347ef093c9d1ae45f9ba9e060cbfa.bindTooltip(
+                `<div>
+                     Antwerp • Hampton by Hilton Antwerp Central Station
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f9b0ff89c9e97c44f18a0628e4f59d80 = L.marker(
+                [51.2194, 4.4025],
+                {}
+            ).addTo(map_cbd1e319c1025e4352f587f07841303d);
+        
+    
+            var div_icon_3bfe232a9a94b1fabb13a882f16d5209 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"transform: translate(10px, -10px);background: rgba(255,255,255,0.95); padding: 2px 6px;border: 1px solid #333; border-radius: 4px;font-size: 11pt; font-weight: 600;\"\u003e8 Antwerp 9/2\u20139/3\u003c/div\u003e", "iconAnchor": [0, 0], "iconSize": [220, 26]});
+            marker_f9b0ff89c9e97c44f18a0628e4f59d80.setIcon(div_icon_3bfe232a9a94b1fabb13a882f16d5209);
+        
+    
+            var marker_90ebaae400f26a23d3ba15150e95d875 = L.marker(
+                [50.8503, 4.3517],
+                {}
+            ).addTo(map_cbd1e319c1025e4352f587f07841303d);
+        
+    
+            var icon_a156b50f72327e6b09113c0e57a70557 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_90ebaae400f26a23d3ba15150e95d875.setIcon(icon_a156b50f72327e6b09113c0e57a70557);
+        
+    
+        var popup_45d8d153e7576acf66524f94a5e41c67 = L.popup({"maxWidth": 320});
+
+        
+            var html_24a9801c364042d7dbe93724edc13af3 = $(`<div id="html_24a9801c364042d7dbe93724edc13af3" style="width: 100.0%; height: 100.0%;"><b>9 Brussels 9/3–9/7</b><hr style='margin:6px 0'/><b>Hotel:</b> Cardo Brussels, Autograph Collection<br><b>Address:</b> Avenue du Boulevard 14, 1210 Brussels, Belgium<br><a href='https://www.google.com/maps/search/?api=1&query=Avenue+du+Boulevard+14%2C+1210+Brussels%2C+Belgium' target='_blank'>Open in Google Maps</a></div>`)[0];
+            popup_45d8d153e7576acf66524f94a5e41c67.setContent(html_24a9801c364042d7dbe93724edc13af3);
+        
+
+        marker_90ebaae400f26a23d3ba15150e95d875.bindPopup(popup_45d8d153e7576acf66524f94a5e41c67)
+        ;
+
+        
+    
+    
+            marker_90ebaae400f26a23d3ba15150e95d875.bindTooltip(
+                `<div>
+                     Brussels • Cardo Brussels, Autograph Collection
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_99a4d827985c586f6c17c126faffeb36 = L.marker(
+                [50.8503, 4.3517],
+                {}
+            ).addTo(map_cbd1e319c1025e4352f587f07841303d);
+        
+    
+            var div_icon_54105e7dda4bdbcf2a94784f1eef5b64 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"transform: translate(10px, -10px);background: rgba(255,255,255,0.95); padding: 2px 6px;border: 1px solid #333; border-radius: 4px;font-size: 11pt; font-weight: 600;\"\u003e9 Brussels 9/3\u20139/7\u003c/div\u003e", "iconAnchor": [0, 0], "iconSize": [220, 26]});
+            marker_99a4d827985c586f6c17c126faffeb36.setIcon(div_icon_54105e7dda4bdbcf2a94784f1eef5b64);
+        
+    
+            var marker_94820bf120b6385f1b995ecaf3bf0bd9 = L.marker(
+                [51.0543, 3.721],
+                {}
+            ).addTo(map_cbd1e319c1025e4352f587f07841303d);
+        
+    
+            var icon_2fc420d6f3fe181fac54099e00bf4293 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_94820bf120b6385f1b995ecaf3bf0bd9.setIcon(icon_2fc420d6f3fe181fac54099e00bf4293);
+        
+    
+        var popup_4df91c3cc53f14c9e0c2eef1d0a1e567 = L.popup({"maxWidth": 320});
+
+        
+            var html_815ca625f29f537273a4942457eeb01c = $(`<div id="html_815ca625f29f537273a4942457eeb01c" style="width: 100.0%; height: 100.0%;"><b>10 Ghent 9/4</b></div>`)[0];
+            popup_4df91c3cc53f14c9e0c2eef1d0a1e567.setContent(html_815ca625f29f537273a4942457eeb01c);
+        
+
+        marker_94820bf120b6385f1b995ecaf3bf0bd9.bindPopup(popup_4df91c3cc53f14c9e0c2eef1d0a1e567)
+        ;
+
+        
+    
+    
+            marker_94820bf120b6385f1b995ecaf3bf0bd9.bindTooltip(
+                `<div>
+                     Ghent
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9751663f40615d60e5114a6fa2d17373 = L.marker(
+                [51.0543, 3.721],
+                {}
+            ).addTo(map_cbd1e319c1025e4352f587f07841303d);
+        
+    
+            var div_icon_ee644207c7af814c2bdaf6718f0277a4 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"transform: translate(10px, -10px);background: rgba(255,255,255,0.95); padding: 2px 6px;border: 1px solid #333; border-radius: 4px;font-size: 11pt; font-weight: 600;\"\u003e10 Ghent 9/4\u003c/div\u003e", "iconAnchor": [0, 0], "iconSize": [220, 26]});
+            marker_9751663f40615d60e5114a6fa2d17373.setIcon(div_icon_ee644207c7af814c2bdaf6718f0277a4);
+        
+    
+            var poly_line_da1f5592aa929995ba9072219e5ed3b3 = L.polyline(
+                [[51.5074, -0.1276], [48.2082, 16.3738]],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": "8,8", "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.9, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_cbd1e319c1025e4352f587f07841303d);
+        
+    
+            poly_line_da1f5592aa929995ba9072219e5ed3b3.bindTooltip(
+                `<div>
+                     Flight: London → Vienna
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_9446be844576a0a1f56840e677408fe6 = L.polyline(
+                [[48.2082, 16.3738], [47.8095, 13.0458]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.9, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_cbd1e319c1025e4352f587f07841303d);
+        
+    
+            poly_line_9446be844576a0a1f56840e677408fe6.bindTooltip(
+                `<div>
+                     Train: Vienna → Salzburg
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_5475292f16aa52685429503f22a60af7 = L.polyline(
+                [[47.8095, 13.0458], [47.2692, 11.4041]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.9, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_cbd1e319c1025e4352f587f07841303d);
+        
+    
+            poly_line_5475292f16aa52685429503f22a60af7.bindTooltip(
+                `<div>
+                     Train: Salzburg → Innsbruck
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_81fa86b0beffb529f0a6c7aae4c30c77 = L.polyline(
+                [[47.2692, 11.4041], [47.8095, 13.0458]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.9, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_cbd1e319c1025e4352f587f07841303d);
+        
+    
+            poly_line_81fa86b0beffb529f0a6c7aae4c30c77.bindTooltip(
+                `<div>
+                     Train: Innsbruck → Salzburg
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_98159162ed9e3a02c819ce46b824852f = L.polyline(
+                [[47.8095, 13.0458], [47.4979, 19.0402]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.9, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_cbd1e319c1025e4352f587f07841303d);
+        
+    
+            poly_line_98159162ed9e3a02c819ce46b824852f.bindTooltip(
+                `<div>
+                     Train: Salzburg → Budapest
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_7f4d8a100b0217abef6f57624bd09b2f = L.polyline(
+                [[47.4979, 19.0402], [52.3676, 4.9041]],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": "8,8", "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.9, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_cbd1e319c1025e4352f587f07841303d);
+        
+    
+            poly_line_7f4d8a100b0217abef6f57624bd09b2f.bindTooltip(
+                `<div>
+                     Flight: Budapest → Amsterdam
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_0c149c0029bee8527daa4574a9088dbd = L.polyline(
+                [[52.3676, 4.9041], [52.0705, 4.3007]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.9, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_cbd1e319c1025e4352f587f07841303d);
+        
+    
+            poly_line_0c149c0029bee8527daa4574a9088dbd.bindTooltip(
+                `<div>
+                     Train: Amsterdam → The Hague
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_0f29653a259467c270874d0a4dbb15c4 = L.polyline(
+                [[52.0705, 4.3007], [51.2194, 4.4025]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.9, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_cbd1e319c1025e4352f587f07841303d);
+        
+    
+            poly_line_0f29653a259467c270874d0a4dbb15c4.bindTooltip(
+                `<div>
+                     Train: The Hague → Antwerp
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_9d2d2d2622d53492671499c3bde5faa1 = L.polyline(
+                [[51.2194, 4.4025], [50.8503, 4.3517]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.9, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_cbd1e319c1025e4352f587f07841303d);
+        
+    
+            poly_line_9d2d2d2622d53492671499c3bde5faa1.bindTooltip(
+                `<div>
+                     Train: Antwerp → Brussels
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_578e00905d1074d73b8d865d4a3055d0 = L.polyline(
+                [[50.8503, 4.3517], [51.0543, 3.721]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.9, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_cbd1e319c1025e4352f587f07841303d);
+        
+    
+            poly_line_578e00905d1074d73b8d865d4a3055d0.bindTooltip(
+                `<div>
+                     Train: Brussels → Ghent
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_3f7a5d604d4ead826825590dce84a4e9 = L.polyline(
+                [[51.0543, 3.721], [50.8503, 4.3517]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.9, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_cbd1e319c1025e4352f587f07841303d);
+        
+    
+            poly_line_3f7a5d604d4ead826825590dce84a4e9.bindTooltip(
+                `<div>
+                     Train: Ghent → Brussels
+                 </div>`,
+                {"sticky": true}
+            );
+        
+</script>
+</html>
